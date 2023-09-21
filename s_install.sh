@@ -4,7 +4,7 @@ BIN_FOLDER="bin"
 ETC_FOLDER="etc"
 SECRET_FOLDER="secrets"
 
-if [[ ! -e "./s_install.pkg" ]];then
+if [[ ! -e "./s_install.pkg" ]]; then
     echo file s_install.pkg not found
     exit 1
 else
@@ -12,7 +12,7 @@ else
 fi
 
 #check
-if [[ "$SCRIPT_HOME"="" ]]; then
+if [[ "$SCRIPT_HOME" == "" ]]; then
     export SCRIPT_HOME="$HOME"
 fi
 SCRIPT_FOLDER="$SCRIPT_HOME/$BIN_FOLDER"

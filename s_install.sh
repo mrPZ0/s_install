@@ -1,8 +1,9 @@
 #!/bin/bash
 
 BIN_FOLDER="bin"
-ETC_FOLDER="etc"
+ETC_FOLDER="config"
 SECRET_FOLDER="secrets"
+SOURCE_BIN_LIST=()
 
 if [[ ! -e "./s_install.pkg" ]]; then
     echo file s_install.pkg not found
@@ -32,12 +33,11 @@ done
 if [[ ! -d "$SCRIPT_ETC/$PACKAGE_NAME" ]]; then
     mkdir -p "$SCRIPT_ETC/$PACKAGE_NAME"
 fi
-cp -fuR ./s_install.pkg "$SCRIPT_ETC/$PACKAGE_NAME/"
-
 for item in $SOURCE_ETC_LIST ; do
     target_name="$SCRIPT_ETC/$PACKAGE_NAME/$(basename $item)"
     cp -fuR $item $target_name
 done
+cp -fuR ./s_install.pkg "$SCRIPT_ETC/$PACKAGE_NAME/"
 
 #create secrets folder
 if [[ ! -d "$SCRIPT_SECRETS/$PACKAGE_NAME" ]]; then

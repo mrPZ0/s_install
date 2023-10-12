@@ -9,8 +9,12 @@ SOURCE_ETC_LIST=()
 PREINSTALL_CMD=""
 POSTINSTALL_CMD=""
 DEPENCY=""
-function _preinstall() {}
-function _postinstall() {}
+function _preinstall() {
+    local i
+}
+function _postinstall() {
+    local i
+}
 
 if [[ ! -e "./s_install.pkg" ]]; then
     echo file s_install.pkg not found
